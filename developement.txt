@@ -1,0 +1,11 @@
+12/08/2023:
+1. Add Database Connection (MongoDB)
+2. Add Middleware 
+3. Add User, Authentication & Expense controller
+4. Add Mongodb Drop Table Function
+
+13/08/2023:
+1. Updare filename, let it become readable
+2. Add Firebase connection
+3. Add config folder, this direction will save service account json file
+4. Add Firebase backup function
