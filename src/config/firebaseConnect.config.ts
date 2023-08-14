@@ -24,17 +24,17 @@ const SERVICE_ACCOUNT = {
 };
 
 const defaultAppConfig = {
-  credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
   databaseURL: `${process.env.FIREBASE_DATABASE_URL}`,
 };
 
 const babycareAppConfig = {
-  credential: admin.credential.cert(babycareServiceAccount),
+  credential: admin.credential.cert(babycareServiceAccount as admin.ServiceAccount),
   databaseURL: "https://babycare-f3a4b.firebaseio.com",
 };
 
 const adoptpetAppConfig = {
-  credential: admin.credential.cert(adoptpetServiceAccount),
+  credential: admin.credential.cert(adoptpetServiceAccount as admin.ServiceAccount),
   databaseURL: "https://adoptpet-fc8fa.firebaseio.com",
 };
 

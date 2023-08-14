@@ -9,3 +9,5 @@
 2. Add Firebase connection
 3. Add config folder, this direction will save service account json file
 4. Add Firebase backup function
+5. fix bug: rimraf getting error
+6. Update firebase service type "as admin.serviceAccount"
