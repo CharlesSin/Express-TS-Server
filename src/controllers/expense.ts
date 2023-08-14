@@ -2,8 +2,8 @@ import express from "express";
 
 import { deleteExpenseById, getExpense, getExpenseById } from "../db/expense";
 import { dropMongoDBTable } from "../utils/dropTable";
-
-// import { backupAccountData } from "../utils/firebaseBackup";
+import { backupAccountData } from "../utils/firebaseBackup";
+import { transferData } from "../utils/transferData";
 
 export const getAllExpense = async (req: express.Request, res: express.Response) => {
   try {
@@ -59,6 +59,9 @@ export const backupExpense = async (req: express.Request, res: express.Response)
   try {
     if (status) {
       await dropMongoDBTable();
+      const response2023 = await backupAccountData("Account2023");
+
+      await transferData(response2023);
 
       return res
         .status(200)
