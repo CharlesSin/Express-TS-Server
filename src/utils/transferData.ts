@@ -1,8 +1,8 @@
 import { ExpenseModel } from "../db/expense";
 
-import * as twenty from "../backupdata/account2020_2023-05-25_2458.json";
-import * as twentyOne from "../backupdata/Account2021_2023-05-25_7293.json";
-import * as twentyTwo from "../backupdata/Account2022_2023-05-25_6263.json";
+import twenty from "../backupdata/account2020_2023-05-25_2458.json";
+import twentyOne from "../backupdata/Account2021_2023-05-25_7293.json";
+import twentyTwo from "../backupdata/Account2022_2023-05-25_6263.json";
 
 interface ExpenseInterface {
   date: string;

@@ -1,8 +1,9 @@
-12/08/2023:
-1. Add Database Connection (MongoDB)
-2. Add Middleware 
-3. Add User, Authentication & Expense controller
-4. Add Mongodb Drop Table Function
+14/08/2023
+1. Add transferData function.
+2. Update firebaseBackup function.
+3. Update expense controller function.
+4. Update development.txt
+5. Fix import json wroding
 
 13/08/2023:
 1. Updare filename, let it become readable
@@ -12,8 +13,8 @@
 5. fix bug: rimraf getting error
 6. Update firebase service type as admin.serviceAccount
 
-14/08/2023
-1. Add transferData function.
-2. Update firebaseBackup function.
-3. Update expense controller function.
-4. Update development.txt
+12/08/2023:
+1. Add Database Connection (MongoDB)
+2. Add Middleware 
+3. Add User, Authentication & Expense controller
+4. Add Mongodb Drop Table Function
