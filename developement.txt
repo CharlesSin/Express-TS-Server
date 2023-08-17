@@ -1,3 +1,7 @@
+17/08/2023
+1. Remove import service account json file.
+2. Setup service account using env config.
+
 14/08/2023
 1. Add transferData function.
 2. Update firebaseBackup function.
