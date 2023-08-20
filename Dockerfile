@@ -12,7 +12,7 @@ COPY . .
 
 RUN yarn build
 
-FROM node:slim
+FROM node:18
 
 ENV NODE_ENV production
 USER node

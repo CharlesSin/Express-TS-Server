@@ -1,7 +1,9 @@
 20/08/2023
 1. Add Dockerfile
 2. Update Node Engine Version
-3. fix mistake.
+3. Fix mistake.
+4. Add node version 18.0 into Dockerfile
+5. Update node version
 
 18/08/2023
 1. Add node engine.
