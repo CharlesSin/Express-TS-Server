@@ -1,3 +1,7 @@
+20/08/2023
+1. Add Dockerfile
+2. Update Node Engine Version
+
 18/08/2023
 1. Add node engine.
 2. Update node engine version into package.json
