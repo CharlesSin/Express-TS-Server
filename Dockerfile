@@ -28,4 +28,4 @@ RUN yarn install --production --frozen-lockfile
 COPY --from=builder /usr/src/app/dists ./dists
 
 EXPOSE 8080
-CMD [ "node", "dist/sindex.js" ]
+CMD [ "node", "dists/index.js" ]
