@@ -1,3 +1,6 @@
+23/08/2023
+1. add github workflow
+
 20/08/2023
 1. Add Dockerfile
 2. Update Node Engine Version
