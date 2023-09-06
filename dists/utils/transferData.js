@@ -42,18 +42,17 @@ const transferData = (response) => __awaiter(void 0, void 0, void 0, function* (
     for (let index = 0; index < Account2021_2023_05_25_7293_json_1.default.length; index++) {
         const expense = Account2021_2023_05_25_7293_json_1.default[index];
         const numFruit = yield addData(expense);
-        console.log(numFruit);
+        console.log(JSON.stringify(numFruit));
     }
     for (let index = 0; index < Account2022_2023_05_25_6263_json_1.default.length; index++) {
         const expense = Account2022_2023_05_25_6263_json_1.default[index];
         const numFruit = yield addData(expense);
-        console.log(numFruit);
+        console.log(JSON.stringify(numFruit));
     }
     for (let index = 0; index < twentyThree.length; index++) {
         const expense = twentyThree[index];
-        console.log({ expense });
         const numFruit = yield addData(expense);
-        console.log(numFruit);
+        console.log(JSON.stringify(numFruit));
     }
     console.log(`Start: ${start}`);
     const total = Account2021_2023_05_25_7293_json_1.default.length + Account2022_2023_05_25_6263_json_1.default.length + twentyThree.length;

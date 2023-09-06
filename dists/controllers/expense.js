@@ -9,11 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.backupExpense = exports.updateExpense = exports.deleteExpense = exports.getAllExpense = void 0;
+exports.backupExpenseYear = exports.backupExpense = exports.updateExpense = exports.deleteExpense = exports.getAllExpense = void 0;
 const expense_1 = require("../db/expense");
 const dropTable_1 = require("../utils/dropTable");
 const firebaseBackup_1 = require("../utils/firebaseBackup");
 const transferData_1 = require("../utils/transferData");
+const fileSystem_1 = require("../utils/fileSystem");
 const getAllExpense = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const expense = yield (0, expense_1.getExpense)();
@@ -89,4 +90,23 @@ const backupExpense = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
 });
 exports.backupExpense = backupExpense;
+const backupExpenseYear = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { year } = req.body;
+    (0, firebaseBackup_1.backupAccountData)(`account${year}`)
+        .then((response) => {
+        const result = (0, fileSystem_1.writeLocalJsonFile)("./", `account${year}`, response);
+        return res
+            .status(200)
+            .json({
+            result,
+            message: `Success save filename: ${result}`,
+        })
+            .end();
+    })
+        .catch((err) => {
+        console.error(err);
+        return res.sendStatus(400);
+    });
+});
+exports.backupExpenseYear = backupExpenseYear;
 //# sourceMappingURL=expense.js.map

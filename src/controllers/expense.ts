@@ -4,6 +4,7 @@ import { deleteExpenseById, getExpense, getExpenseById } from "../db/expense";
 import { dropMongoDBTable } from "../utils/dropTable";
 import { backupAccountData } from "../utils/firebaseBackup";
 import { transferData } from "../utils/transferData";
+import { writeLocalJsonFile } from "../utils/fileSystem";
 
 export const getAllExpense = async (req: express.Request, res: express.Response) => {
   try {
@@ -49,6 +50,7 @@ export const updateExpense = async (req: express.Request, res: express.Response)
     return res.sendStatus(400);
   }
 };
+
 /**
  * Backup from firebase data & transfer data to mongodb
  * @param req
@@ -81,4 +83,24 @@ export const backupExpense = async (req: express.Request, res: express.Response)
     console.log(error);
     return res.sendStatus(400);
   }
+};
+
+export const backupExpenseYear = async (req: express.Request, res: express.Response) => {
+  const { year } = req.body;
+
+  backupAccountData(`account${year}`)
+    .then((response) => {
+      const result = writeLocalJsonFile("./", `account${year}`, response);
+      return res
+        .status(200)
+        .json({
+          result,
+          message: `Success save filename: ${result}`,
+        })
+        .end();
+    })
+    .catch((err) => {
+      console.error(err);
+      return res.sendStatus(400);
+    });
 };

@@ -1,4 +1,5 @@
 import { fireConfig, fireConfig_babycare, fireConfig_adoptpet } from "../config/firebaseConnect.config";
+import { writeLocalJsonFile } from "./fileSystem";
 
 export const backupAccountData = async (collectionName: String) => {
   const firestoreDb =
@@ -10,7 +11,6 @@ export const backupAccountData = async (collectionName: String) => {
 
   querySnapshot.forEach((doc: any) => {
     const documentItem: any = doc.data();
-    // console.log({ documentItem });
     documentItem.id = doc.id;
     accountObj.push(documentItem);
   });

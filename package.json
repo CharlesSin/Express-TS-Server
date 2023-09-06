@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "start": "npm run build && node dists/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dists/index.js\"",
     "ts.check": "tsc --project tsconfig.json"
   },
   "engines": {

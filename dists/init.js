@@ -55,7 +55,6 @@ const ExpenseSchema = new mongoose_1.default.Schema({
 const ExpenseModel = mongoose_1.default.model("allexpense", ExpenseSchema);
 const dropMongoDBTable = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // await dbConnect();
         yield ExpenseModel.collection.drop();
         console.log("Table Already Drop");
     }
@@ -64,7 +63,6 @@ const dropMongoDBTable = () => __awaiter(void 0, void 0, void 0, function* () {
     }
     finally {
         console.log("MongoDB Disconnect");
-        // mongoose.disconnect();
     }
 });
 // firebase config.
@@ -128,7 +126,6 @@ const backupAccountData = (collectionName) => __awaiter(void 0, void 0, void 0, 
     let accountObj = [];
     querySnapshot.forEach((doc) => {
         const documentItem = doc.data();
-        // console.log({ documentItem });
         documentItem.id = doc.id;
         accountObj.push(documentItem);
     });

@@ -18,7 +18,6 @@ const backupAccountData = (collectionName) => __awaiter(void 0, void 0, void 0, 
     let accountObj = [];
     querySnapshot.forEach((doc) => {
         const documentItem = doc.data();
-        // console.log({ documentItem });
         documentItem.id = doc.id;
         accountObj.push(documentItem);
     });

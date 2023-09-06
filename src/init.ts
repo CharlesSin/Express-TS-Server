@@ -24,14 +24,12 @@ const ExpenseModel = mongoose.model("allexpense", ExpenseSchema);
 
 const dropMongoDBTable = async () => {
   try {
-    // await dbConnect();
     await ExpenseModel.collection.drop();
     console.log("Table Already Drop");
   } catch (err) {
     console.log({ err });
   } finally {
     console.log("MongoDB Disconnect");
-    // mongoose.disconnect();
   }
 };
 
@@ -106,7 +104,6 @@ const backupAccountData = async (collectionName: String) => {
 
   querySnapshot.forEach((doc: any) => {
     const documentItem: any = doc.data();
-    // console.log({ documentItem });
     documentItem.id = doc.id;
     accountObj.push(documentItem);
   });

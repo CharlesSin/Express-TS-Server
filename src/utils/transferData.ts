@@ -41,20 +41,19 @@ export const transferData = async (response: any) => {
   for (let index = 0; index < twentyOne.length; index++) {
     const expense = twentyOne[index];
     const numFruit = await addData(expense);
-    console.log(numFruit);
+    console.log(JSON.stringify(numFruit));
   }
 
   for (let index = 0; index < twentyTwo.length; index++) {
     const expense = twentyTwo[index];
     const numFruit = await addData(expense);
-    console.log(numFruit);
+    console.log(JSON.stringify(numFruit));
   }
 
   for (let index = 0; index < twentyThree.length; index++) {
     const expense = twentyThree[index];
-    console.log({ expense });
     const numFruit = await addData(expense);
-    console.log(numFruit);
+    console.log(JSON.stringify(numFruit));
   }
 
   console.log(`Start: ${start}`);
